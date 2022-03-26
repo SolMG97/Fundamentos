@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica 2 con JS</title>
+</head>
+<body bgcolor="#FFEBC2">
+   <h1 align="center">
+       <font color="#806416">Calculadora Básica con JS</font>
+    </h1>
+    <input id="txtNum1" name="textinput" type="text" >
+<input id="txtNum2" name="textinput" type="text" >
+<button id="btnSumar" name="Boton sumar" onclick="suma(document.getElementById('txtNum1').value,document.getElementById('txtNum2').value);">Sumar</button>
+<button id="btnRestar" name="Boton sumar" onclick="restar(document.getElementById('txtNum1').value,document.getElementById('txtNum2').value);">Restar</button>
+<button id="btnMultiplicar" name="Boton sumar" onclick="multiplicacion(document.getElementById('txtNum1').value,document.getElementById('txtNum2').value);">Multiplicar</button>
+<button id="btnDividir" name="Boton sumar" onclick="division(document.getElementById('txtNum1').value,document.getElementById('txtNum2').value);">Dividir</button>
+<label id="lblResultado"></label> 
+   <script>
+     var res;
+
+function suma(num1,num2) {
+ res = parseFloat(num1) + parseFloat(num2);
+ document.getElementById('lblResultado').innerHTML = res;
+}
+function restar(num1,num2) {
+ res = parseFloat(num1) - parseFloat(num2);
+ document.getElementById('lblResultado').innerHTML = res;
+}
+
+function multiplicacion(num1,num2) {
+ res = parseFloat(num1) * parseFloat(num2);
+ document.getElementById('lblResultado').innerHTML = res;
+}
+
+function division(num1,num2) {
+ res = parseFloat(num1) / parseFloat(num2);
+ document.getElementById('lblResultado').innerHTML = res;
+}
+    </script> 
+    <br> 
+    <br> 
+    <br> 
+ <h1 align="center">
+    <font color="#DB6A33">Fórmula Cuadrática</font>
+ </h1>
+ <title>Ecuaciones de 2° Grado</title>
+</head>
+<script language =javascript>
+<!--
+ function ResolverEc()
+ {
+  var Ea= parseInt(document.forms[0].Ea.value);
+  var Eb= parseInt(document.forms[0].Eb.value);
+  var Ec= parseInt(document.forms[0].Ec.value);
+  var E1= new Ec2gdo(Ea,Eb,Ec);
+  E1.Resolver(E1);
+  delete E1;
+  document.close();
+ }
+ function Ec2gdo(A,B,C)
+ {
+  this.a=A;
+  this.b=B;
+  this.c=C;
+  this.est=0;
+  this.x1=new Complejo();
+  this.x2=new Complejo();
+  this.Resolver=ResolverEc2gdo;
+  this.ResolverReal=Real;
+  this.ResolverImaginario=Imaginario;
+  this.AsString=AsString;
+ }
+ function ResolverEc2gdo()
+ {
+  var d=(this.b*this.b)-(4*this.a*this.c);
+  if(d>=0)
+  {
+   this.ResolverReal(d);
+   //this.AsString();
+  }
+  else
+  {
+   this.ResolverImaginario(d);
+  }
+ }
+ function Real(D)
+ {
+  var d=D;
+  var r=Math.sqrt(d);
+  this.x1.R=((this.b*-1)+r)/(2*this.a);
+  this.x2.R=((this.b*-1)-r)/(2*this.a);
+  this.est=0;
+  this.AsString();
+ }
+ function Imaginario(D)
+ {
+  var d=D;
+  d*=-1;
+  this.x1.R=(this.b*-1)/(2*this.a);
+  this.x1.I=Math.sqrt(d)/(2*this.a);
+  this.x2.R=this.x1.R;
+  this.x2.I=this.x1.I;
+  this.est=1;
+  this.AsString();
+ }
+ function  AsString(res)
+ {
+  //var estado=est;
+  if(this.est==0)
+  {
+   alert('x1= '+this.x1.R+'\n'+'x2= '+this.x2.R);
+  }
+  else
+  {
+   alert('x1= '+ this.x1.R+' + '+this.x1.I+' i'+'\n'+'x2= '+this.x2.R+' - '+this.x2.I+' i')
+  }
+  delete x1;
+  delete x2;
+ }
+
+ function Complejo(R,I)
+ {
+  this.R=(R || 0);
+  this.I=(I || 0);
+ }
+ 
+-->
+</script>
+<body>
+ <form><font color="black"><b>
+  Ecuación1  <input type="text" name="Ea" size="2">  x<sup>2</sup> 
+  + <input type="text" name="Eb" size="2">  x  
+  + <input type="text" name="Ec" size="2"> =  0</b></font>
+  <br><br><input type="button" value="Resolver" onClick="ResolverEc()"><br><br>
+  <input type="reset"><br><br><br><br><br></form>
+  
+ 
+
+ </body>
+</html>
