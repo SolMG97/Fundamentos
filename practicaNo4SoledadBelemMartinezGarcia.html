@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Practica no. 4 con JS Calculadora y Ejercicios del curso</h1>
+   <script>
+       let num1 = prompt("Ingresa un número");
+    let op = prompt("Asigna un Operador  +, -, *, /, %");
+    let num2 = prompt("Ingresa otro número");
+    let calcularNuevamente;
+    
+    do{
+        
+        if(op == ('+') | op==('-') | op == ('*') | op == ('/')| op == ('%')| op == ('**')){
+    if (op == '+') {
+        let sum = parseFloat(num1) + parseFloat(num2);
+        console.log("El resultado de la suma de " + num1, "+ " + num2, "es: "+ sum);
+    }
+    else if (op == '-') {
+        let res = parseFloat(num1) - parseFloat(num2);
+        console.log("El resultado de la resta de " + num1, "- " + num2, " es: "+ res);
+    }
+    else if (op == '*') {
+        let mul = parseFloat(num1) * parseFloat(num2);
+        console.log("El resultado de la multiplicacion de " + num1, "* " + num2, " es: "+ mul);
+    }
+    else if (op == '/') {
+        let divi = parseFloat(num1) / parseFloat(num2);
+        console.log("El resultado de la division de " + num1, "/ " + num2, " es: "+ divi);
+    }
+    else if (op == '%') {
+        let modu = parseFloat(num1) % parseFloat(num2);
+        console.log("El resultado del modulo de " + num1, "% " + num2, " es: "+ modu);
+    }
+    
+}
+    else{
+        window.alert("Operador invalido");
+    }
+    
+    calcularNuevamente=prompt('Volver a realizar una operacion S/N:');
+    }while(calcularNuevamente==="S");
+    
+   </script>
+   
+   <script>
+    //Ejercicio 1.- Programa una función que cuente el número de caracteres de una cadena de texto, pe. miFuncion "Hola Mundo" devolverá 10.
+    function contarCaracteres(cadena="")
+    {
+        if(cadena)
+        {
+            
+            console.info(`La cadena "${cadena}" tiene ${cadena.length} caracteres`)
+        }
+    }
+    contarCaracteres();
+    contarCaracteres("Hola Mundo");
+    
+
+
+    /*Ejercicio2.- Programa una función que te devuelva el texto recortado según el número de caracteres indicados,
+     pe. miFuncion "Hola Mundo", 4 devolverá "Hola"*/
+    const recortarTex = (cadena="", longitud = undefined) =>
+    (!cadena)
+    ? console.warn("No existe la cadena")
+    : console.info(cadena.slice(0,longitud));
+   recortarTex("Hola a todos",4);
+   recortarTex();
+
+
+
+   /*Ejercicio 3.- Programa una función que dada una String te devuelva un Array de textos separados por cierto caracter,
+    pe. miFuncion 'hola que tal', ' ' devolverá ['hola', 'que', 'tal']*/
+    const cadenaDeArreglo = (cadena = "",separador = undefined) =>
+    (!cadena)
+    ?console.warn("No existe la cadena")
+    :console.info(cadena.split(separador));
+    cadenaDeArreglo("Hola que tal", " ");
+
+
+    /*Ejercicio 4.-  Programa una función que repita un texto X veces,
+     pe. miFuncion 'Hola Mundo', 3 devolverá Hola Mundo Hola Mundo Hola Mundo*/
+     const repiteTexto = (texto = "", repeticiones = undefined) =>{
+         if(!texto)return console.warn("No ingresaste un texto");
+        ;
+        if(repeticiones === 0)return console.error ("Las repeticiones en 0 no es valido");
+
+        for(let i= 1; i <= repeticiones;i++)
+        {
+          console.info(`${texto},${i}`);
+        }
+     }
+     repiteTexto("Hola Mundo",3);
+</script>
+</body>
+</html>
